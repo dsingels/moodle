@@ -113,19 +113,19 @@
         },
 
         updateInstructorChoices: function(typeid) {
-        	var self = this;
-        	var sendname = Y.one('[name="instructorchoicesendname"]')
-        	var sendemailaddr = Y.one('[name="instructorchoicesendemailaddr"]')
-        	var acceptgrades = Y.one('[name="instructorchoiceacceptgrades"]')
-        	sendname.set('value', '1');
-        	sendemailaddr.set('value', '1');
-        	acceptgrades.set('value', '1');
-        	if(typeid) {
-        		if(typeid.getAttribute('toolproxy')) {
+            var self = this;
+            var sendname = Y.one('[name="instructorchoicesendname"]')
+            var sendemailaddr = Y.one('[name="instructorchoicesendemailaddr"]')
+            var acceptgrades = Y.one('[name="instructorchoiceacceptgrades"]')
+            sendname.set('value', '1');
+            sendemailaddr.set('value', '1');
+            acceptgrades.set('value', '1');
+            if(typeid) {
+                if(typeid.getAttribute('toolproxy')) {
                     var allowname = Y.one('#id_instructorchoicesendname');
                     var noname = typeid.getAttribute('noname');
                     allowname.set('checked', !noname);
-                	sendname.set('value', noname ? '0' : '1');
+                    sendname.set('value', noname ? '0' : '1');
 
                     var allowemail = Y.one('#id_instructorchoicesendemailaddr');
                     var noemail = typeid.getAttribute('noemail');
@@ -137,8 +137,8 @@
                     allowgrades.set('checked', !nogrades);
                     acceptgrades.set('value', nogrades ? '0' : '1');
                     self.toggleGradeSection();
-        		}
-        	}
+                }
+            }
         },
 
         toggleGradeSection: function(e) {
